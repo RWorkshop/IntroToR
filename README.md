@@ -1,4 +1,6 @@
-ProjectClay
-===========
+Ada Lovelace Talk
+=================
 
-Project Clay
+"Probability : Presumptions, Paradoxes and Pitfalls" 
+
+Programming Language : Julia

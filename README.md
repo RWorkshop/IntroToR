@@ -1,14 +1,10 @@
-Ada Lovelace Talk
+ESRI talk
 =================
 
 "Probability : Presumptions, Paradoxes and Pitfalls" 
 
-Programming Language : Julia
+Programming Language :Rso
 
-Tuesday 13th October 2014
-City Centre Venue in Dublin
-
-Host: 
-Speaker:
-
-
+statistical disclosure on trolley
+survey
+official statistics And survey Methodology

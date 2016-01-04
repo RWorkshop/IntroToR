@@ -1,4 +1,205 @@
-<<<<<<< HEAD
+
+
+R Workshop
+Introduction to R
+The R environment
+Basic Mathematical Calculations
+Data Input and Output
+Data Manipulation
+Descriptive and Quantile Statistics
+Frequency Analysis
+Sequences
+Data Objects
+Preview
+Graphical Methods
+Task 1 : Bland Altman Plot
+Matrices
+Packages
+Precision
+Probability Distributions
+Task 2 : Simulating rolls of a die.
+Simulating a dice experiment
+Task 3: Implementing the Central Limit Theorem
+Hypothesis Tests
+GUIs and  IDEs
+ 
+Introduction to R
+
+
+R is a statistical Environment for statistical computing and graphics, which is available for windows, Unix and Mac OS platforms.
+
+R is maintained and distributed by an international team of statisticians and computers scientists.
+
+R is one of the major tools used in statistical research and in applications of statistics research.
+
+R is the product of an active movement among statisticians for a powerful, programmable, portable, and open computing environment, applicable to the most complex and sophsticated problems, as well as “routine” analysis.
+
+R is open source. There is very little restriction on access or use for practitioners.
+
+Practitioners have implemented hundreds of specialized statistical procedures for a wide variety of applications as contributed packages, which are also freely-available and which integrate directly into R. ( We will look at those shortly).
+
+ 
+Advantages of R
+
+1. It is completely free and will always be so, since it is issued under the GNU Public License;
+2. It is freely-available over the internet;
+3. It runs on almost all operating systems, including Unix and derivatives including Darwin, Mac OS X, Linux, FreeBSD, and Solaris; and most flavours of Microsoft Windows;
+4. It is the product of international collaboration between top computational statisticians and computer language designers;
+5. It allows statistical analysis and visualisation of unlimited sophistication; you are not restricted to a small set of procedures or options, and because of the contributed packages, you are not limited to one method of accomplishing a given computation or graphical presentation;
+ 
+
+Starting R
+
+
+R can be started in the usual way by double-clicking on the R icon on the desktop.
+
+R works best if you have a dedicated folder for each separate project - called the working folder.
+
+Create the directory/folder that will be used as the working folder, e.g. create a folder on your desktop titled Your_name by right-clicking, then clicking New > Folder.
+
+Right-click on an existing R icon and click Copy. 
+
+In the working folder, right-click and click Paste. 
+
+The R icon will appear in the folder.
+
+
+
+The R environment
+
+ 
+ 
+If a command is not complete at the end of a line, R will give a different prompt, by default:
+"+" on second and subsequent lines and continue to read input until the command is syntactically complete.
+ 
+In particular functions in R are treated as objects that can be manipulated or used recursively, example TSA book3
+In common with functional languages, assignments in R can be avoided, but they are useful for clarity and convenience. 
+In addition R runs faster when loops are avoided, which can often be achieved using matrix calculation instead however, thus results in obscure looking code.
+ 
+
+Basic Mathematical Calculations
+Basic operations
+addition  +      subtraction    	-
+division   /      multiplication     *
+power     ^
+ 
+ 
+functions
+abs()       - Absolute value 
+exp()	   - The exponential
+log(,b)     - logarithm to the base "b". The default setting is the natural log.
+ 
+trigonometrics functions
+
+pi            -  to 6 decimal places.
+
+tan() ,cos(), sin()   - Common trigonometric functions
+
+
+
+logical and relational operators
+ 
+||      logical "Or"      (i.e.  union)
+&&     logical "And"   (i.e. intersection)   
+
+ 
+ 
+Precision
+floor() 	  The floor function 		x
+ceiling()    The ceiling function       x
+
+round()      Round to the nearest integer
+round( ,2)  Round to two decimal places
+
+Exercise:  write   with 4 decimal places.  
+
+
+
+Data Manipulation
+Types of vectors
+	logical
+	numeric
+	character
+    Others  - Complex and Colour
+
+creating a vector
+
+scan()
+
+X=c()
+
+data.entry()
+
+data manipulation
+sort()
+rev()
+rep()
+length()
+order()
+
+
+Indices
+
+ 
+
+ 
+
+ 
+conversion and coercion
+as.numeric()
+as.integer()
+Descriptive and Quantile Statistics
+fivenum
+quantiles
+mean
+Measures of Dispersion
+  range
+  variance
+  covariance
+  standard deviation
+
+sum
+
+ 
+ 
+
+Frequency Analysis
+table()
+ 
+Sequences 
+ 
+
+
+
+Graphical Methods
+
+barplot
+histograms
+jitter
+plot
+identify
+
+abline
+add a vertical line to a plot
+add a horizontal line to a plot
+ 
+boxplot.stats(count ~ spray, data = InsectSprays, col = "lightgray")
+# *add* notches (somewhat funny here):
+boxplot(count ~ spray, data = InsectSprays,        notch = TRUE, add = TRUE, col = "blue")
+
+
+
+ 
+Task 1 : Bland Altman Plot
+Computation of case-wise differences and averages.
+ 
+Standard deviation of differences
+ 
+abline()
+ 
+ 
+
+ 
 =======
 MS4024 Lecture notes set B
 

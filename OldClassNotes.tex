@@ -1,41 +1,9 @@
-Contents
-Introduction to R	3
-History of R	3
-The R Programming Language	3
-Using the Help functions	3
-Packages	3
-Objects	4
-Probability distributions	4
-Other Mathematical Functions	5
-Complex numbers	5
-Trigonometric  Functions	5
-Useful R commands for linear algebra	5
-Numerical methods	6
-More on Matrices	6
-Descriptive Statistics and Basic Graphical Methods	8
-Measures of Centrality and Dispersion	8
-Histograms	9
-Boxplots	9
-Stem and Leaf Plots	9
-Bivariate Data	9
-Simple Scatterplots, Correlation and Covariance	9
-Anscombe’s Quartet	9
-The uniform distribution	10
-Simulating a dice experiment	10
-The "apply" family of functions	10
-Discrete Probability Distributions	10
-Continuous Probability Distributions]	11
-The Normal distribution	11
-Iteration Loops	12
-Central Limit Theorem	12
-Gambler’s Ruin	13
-Markov Chains	14
 
  
 Introduction to R
 History of R
 
-The R Programming Language
+\subsection{The R Programming Language}
 R is a flexible language that is object oriented and thus allows the manipulation of a complex
 data structures in a condensed and efficient manner.
  
@@ -50,7 +18,7 @@ R can be installed free of charge from www.r-project.org
 An online guide "An Introduction to R" can be access by typing
 help.start() at the command prompt to access this.
 
-Defining variables
+\subsubsection{Defining variables}
 R is case sensitive.
 A convention is to use define a variable name with a capital letter.
 This reduces the chance of overwriting inbuild R functions, which are usually written in lowercase letters.
@@ -59,7 +27,7 @@ This reduces the chance of overwriting inbuild R functions, which are usually wr
 Functions in R can be treated as "objects" that can be manipulated or used recursively.
 
 R shares many aspects with both Object orietnated and Functional programming langguages.
-all data in R is stored an objects, which have a range of "methods" available.
+all data in R is stored an objects, which have a range of "\texttt{methods}" available.
 The "class" of an object can be found using the class() function.
 Using the Help functions
 Embedded help commands "help()" and "help.search()" are good starting points to gather information. 
@@ -120,7 +88,7 @@ Y1 =
 Anscombe’s Quartet 
 The uniform distribution
 
-Simulating a dice experiment
+\subsection{Simulating a dice experiment}
 Dice = runif(50,min=0,max=6)	
 Dice				#print the outcomes to screen
 floor(Dice)			#using the floor function
@@ -157,7 +125,4 @@ qqnorm(Avgs)			#draws a QQ plot that is used to check for normality.
 qqline(Avgs)			#adds trend line to QQplot.
 shapiro.test(Avgs)		#Shapiro Wilk test. Normality is assumed if p-value > 0.05.
 			
- 
-Gambler’s Ruin
-In anticipation of future material on course MS4217.
  

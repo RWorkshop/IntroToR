@@ -23,7 +23,7 @@ Task 3: Implementing the Central Limit Theorem
 Hypothesis Tests
 GUIs and  IDEs
  
-Introduction to R
+\section*{Introduction to R}
 
 
 R is a statistical Environment for statistical computing and graphics, which is available for windows, Unix and Mac OS platforms.
@@ -39,7 +39,7 @@ R is open source. There is very little restriction on access or use for practiti
 Practitioners have implemented hundreds of specialized statistical procedures for a wide variety of applications as contributed packages, which are also freely-available and which integrate directly into R. ( We will look at those shortly).
 
  
-Advantages of R
+\subsection*{Advantages of R}
 
 1. It is completely free and will always be so, since it is issued under the GNU Public License;
 2. It is freely-available over the internet;
@@ -65,7 +65,7 @@ The R icon will appear in the folder.
 
 
 
-The R environment
+\subsection*{The R environment}
 
  
  
@@ -144,7 +144,7 @@ Sequences
 
 
 
-Graphical Methods
+\section{Graphical Methods}
 
 barplot
 histograms
@@ -241,7 +241,7 @@ lillie.test
 nortest
 
  
-
+\subsection*{What is R}
 
 R is an open-source statistical package based on the S language. It is a powerful computing tool that combines the usefulness of a statistical analysis package with that of a publication quality graphics package and a matrix-based programming language. It's easy enough to use for quick and simple tasks, yet powerful enough for the most demanding ones. The goal of this demonstration is to provide a basic introduction to using R. An R session differs from that of other statistical software. You will find it to be an interactive approach where the results from one step lead to the next. This introduction to R is necessarily limited in scope to only a handful of analyses. Once you become familiar with R and browse through some of the online help topics, you will discover tools for practically any type of analysis you need. S-PLUS is a commercial application also based on the S language. Much of R is identical to the command line useage of S-PLUS. There are differences though in some functions and their arguments so existing S-PLUS code may require some modification to run in R. 
 %================================================================================================== %
@@ -257,13 +257,13 @@ Topics included in this tutorial:
 9. What to do next 
 Return to Mercury Home Page 
 %======================================================================================================== %
-1. Starting R the first time
+\subsection*{1. Starting R the first time}
 
 
 When running R from the computer lab, your M drive will be the working directory where your work will be saved by default. You can easily change to another directory at any time by selecting Change Dir... from the File menu. 
 You can save your work at any time. Select Save Workspace from the File menu. You will usually save the workspace in the working directory. When you quit R you will be prompted to save your workspace. 
 %======================================================================================================= %
-2. Some things to keep in mind
+\subsection*{2. Some things to keep in mind}
 
 
 Everything in R is some kind of object. Objects can have different modes (numeric, character, list, function, etc.) with different structures (scalar, vector, matrix, etc.) and different classes (data frame, linear models result, etc.). 
@@ -288,10 +288,11 @@ The Escape key serves as your abort button. If something goes wrong or you're su
 The command line interface in R uses a red font to show your input and a blue font to show results. I've tried to duplicate that in the examples in this tutorial. 
 
 %======================================================================================================== %
-3. Beginning an analysis
+\subsection*{3. Beginning an analysis}
 
 
 For the remainder of this tutorial, we will be analyzing the following dataset: 
+
 Concentration
 0.3330
 0.1670
@@ -308,6 +309,7 @@ Velocity
 2.114
 1.466
 0.866
+
 These data are measurements of the rate or velocity of a chemical reaction for different concentrations of substrate. We are interested in fitting a model of the relationship between concentration and velocity. The first thing we need to do is enter the data. We can do this from the Commands Window, from a spreadsheet interface, or by importing an existing file. Most of this tutorial will focus on command line input so let's begin there. At the prompt, create two vectors: 
 > conc <- c(0.3330, 0.1670, 0.0833, 0.0416, 0.0208, 0.0104, 0.0052)
 > vel <- c(3.636, 3.636, 3.236, 2.660, 2.114, 1.466, 0.866)
@@ -315,6 +317,8 @@ We use the function c(), which stands for concatenate, to create a vector. The i
 Now, we will combine these two vectors into a single data frame: 
 > df <- data.frame(conc, vel)
 Let's look at the data frame to be sure we entered the data correctly. To view any object in R, simply type its name: 
+
+\begin{verbatim}
 > df
     conc   vel
 1 0.3330 3.636
@@ -324,12 +328,15 @@ Let's look at the data frame to be sure we entered the data correctly. To view a
 5 0.0208 2.114
 6 0.0104 1.466
 7 0.0052 0.866
+\end{verbatim}
 Oops. It looks like there is an error in one of the velocity entries. The fourth one down, 2.660, should be 2.666. You could use the up-arrow to recall the command you used to create vel, make the change, and run it again. Then use the up-arrow again to recall the command you used to create df and run that one again. Let's look at another way to do it. First, we'll change just that one element in the vector vel. Individual elements in a vector are referenced in square brackets. We want to change the fourth element, so we type: 
 > vel[4] <- 2.666
 Take a look at vel to see that it has been changed. There are a couple ways to change elements in a data frame. Treating the data frame as a matrix, we can reference the element in the fourth row and second column like this: 
 > df[4,2] <- 2.666
 Note the order that the row and column are referenced: first the row, then the column. Data frames also allow us to reference individual columns by their names. This is done with the name of the data frame, followed by a dollar sign, and the name of the column. So the vel data can be referenced as df$vel. Now we can change the fourth element like this: 
+\begin{verbatim}
 > df$vel[4] <- 2.666
+\end{verbatimm}
 Note that df$vel is a vector so we only need one number in the brackets. Let's take another look at df to be sure we have it right this time. 
 \begin{framed}
 \begin{verbatim}
@@ -358,13 +365,14 @@ The first thing we want to do is plot the data. You can easily get a basic plot 
 The first vector given is the independent variable to be plotted on the X-axis, the second is the dependent variable for the Y-axis. If you execute a plotting function and there is no active graphsheet, a default graphsheet will be opened for you. If you then do another plot, the first one will be lost and the new plot will be drawn in the 
 same graphics window. You can keep your first plot by opening another graphsheet by typing: 
 
+\begin{verbatim}
 > win.graph()
-
+\end{verbatim}
 The default is a square graphsheet. You can create portrait graphsheets, landscape graphsheets, any shape you want. Check win.graph in the help files to see how. 
 We're going to look at 3 different ways to analyze these data: simple linear regression, non-linear regression, and polynomial regression. 
 
 %======================================================================================================== %
-5. Simple Linear Regression
+\section*{5. Simple Linear Regression}
 
 
 You're probably thinking that it would be a mistake to use simple linear regression considering the plot we just produced. Well, there are ways of transforming data so that we can use linear regression methods. We'll fit a Michaelis-Menten function to these data. Using our data, the form of this function is as follows: 
@@ -492,6 +500,8 @@ The function predict() can be used with results from linear models, non-linear m
 I'm sure you noticed I called the y-values y2. This is the fit from our second model. Let's add a line from our first model to see how they compare. We can use the same vector of x-values to calculate a new set of y-values and add the line to our plot. 
 > y1 <- (Vm*x)/(K+x)
 > lines(x, y1, lty="dotted", col="red")
+\end{verbatim}
+\end{framed}
 For this to work, you must have created the objects Vm and K as we did in the previous section. Also note that we used the line type argument (lty) for a dotted line and the color argument (col) to get a different color. Here is what the resulting plot should look like: 
 
 
@@ -503,6 +513,8 @@ The last method we'll use to fit these data is polynomial regression, where the 
 \begin{framed}
 \begin{verbatim}
 > polyfit2 <- lm(vel~conc+I(conc^2), data=df)
+\end{verbatim}
+\end{framed}
 We're using the same function lm() as linear regression, but we're adding multiple instances of the explanatory variable to generate our polynomial formula. Note that we need to use the identity function, I(), because the caret (^) has special meaning in a formula. Another way to build this formula is to create a matrix where each column contains the explanatory variable raised to a power. Use the function cbind() to bind columns together to form a matrix. This is what that would look like: 
 > polyfit2a <- lm(vel~cbind(conc, conc^2), data=df)
 Run either of these commands and view the summary or just take a look at the coefficients: 
@@ -512,6 +524,8 @@ Run either of these commands and view the summary or just take a look at the coe
 > coef2
 (Intercept)        conc   I(conc^2) 
    1.288439   25.652243  -56.500264 
+   \end{verbatim}
+\end{framed}
 Now we want to draw this line on our graph. We could add it to the plot with the other two lines, but let's create a new graph and label the x and y axes: 
 > plot(df$conc, df$vel, xlim=c(0,0.4), ylim=c(0,5), 
 + xlab="Substrate Concentration", ylab="Reaction Rate")
@@ -545,7 +559,11 @@ polymat <- function(x, deg) {
     for(i in 0:deg) out <- cbind(out, x^i)
     return(out)
 }
+\end{verbatim}
+\end{framed}
 Type this into the script window exactly. Save the file in your working directory with a name like polymat.R. Now from the File menu in R, select Source R Code. Look at the command line window to see the function call and to check for any errors here. If there are errors, it's most likely that you typed something in wrong. Double check the syntax and try again. When it sources OK, use the function objects() to see that your function polymat() was really created. Here's how the function works. Give it a vector for x and the polynomial degree you want. It will return a matrix with all ones in the the first column, the second column equal to x, the third column equal to x2, etc. Try it out with a simple vector: 
+\begin{framed}
+\begin{verbatim}
 > polymat(1:5, 3)
      [,1] [,2] [,3] [,4] 
 [1,]    1    1    1    1
@@ -553,6 +571,9 @@ Type this into the script window exactly. Save the file in your working director
 [3,]    1    3    9   27
 [4,]    1    4   16   64
 [5,]    1    5   25  125
+
+\end{verbatim}
+\end{framed}
 Note the 1:5 used here. This is just a shorthand way of getting a vector of integers between two numbers. Now you can use this function when you want to create a vector of y-values to plot. This is how you would use it as an alternative to how you created y4 previously: 
 > y4 <- polymat(x, 6) %*% coef6
 Now if you really want to automate the process, let's write a function that will fit whatever order polynomial you want and plot the graph all with one command. Open another text editor window and type in this function. 
@@ -565,11 +586,18 @@ poly.fit <- function(deg=2, data=df) {
          xlab="Substrate Concentration", ylab="Reaction Rate")
     lines(x,y)
     invisible()
+
 }
-You should recognize most of the lines in this function The call to lm uses the polymat function we just wrote. However, we don't want the first column of 1's in the matrix here. We can remove it with polymat(data$conc,deg)[, -1]. Remember that within square brackets like this the first number references the rows and the second number references the columns. We don't identify any rows so by default we get them all. Instead of specifying which columns we want, we specify which we don't want by using the minus sign. The invisible() function is used because nothing is being returned from poly.fit() other than a graph. 
-It's important to note that you don't have to put everything in a single function. Here we wrote a smaller function to create the polynomial matrix and then we called it from within another function. It's usually more efficient to build a library of smaller functions that do specific tasks and then pull them together as needed. Notice also that the data frame is an argument to this function. This way the function is not specific to just one data set, although from the way the function is written, it must have columns labeled vel and conc. 
+\end{verbatim}
+\end{framed}
+You should recognize most of the lines in this function The call to lm uses the polymat function we just wrote. However, we don't want the first column of 1's in the matrix here. We can remove it with \texttt{polymat(data$conc,deg)[, -1]}. Remember that within square brackets like this the first number references the rows and the second number references the columns. We don't identify any rows so by default we get them all. Instead of specifying which columns we want, we specify which we don't want by using the minus sign. The \texttt{invisible()} function is used because nothing is being returned from poly.fit() other than a graph. 
+It's important to note that you don't have to put everything in a single function. Here we wrote a smaller function to create the polynomial matrix and then we called it from within another function. 
+
+It's usually more efficient to build a library of smaller functions that do specific tasks and then pull them together as needed. Notice also that the data frame is an argument to this function. This way the function is not specific to just one data set, although from the way the function is written, it must have columns labeled vel and conc. 
 Remember to source the function in order to use it. Notice that both arguments have defaults so you could use the function with no arguments within the parentheses. To try a 4th order polynomial and see the fit, use the function like this: 
 > poly.fit(4)
 That's all there is to it. Hopefully you can see the value of being able to write your own functions this easily. Can you modify the function so that it returns the coefficients? 
 
+
+\end{document}
 

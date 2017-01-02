@@ -1,5 +1,5 @@
 %====================================================================================================%
-\section{Factors}
+<h3>Factors}
 A factor is a special type of vector used to represent categorical
 data, e.g. gender, social class, etc.
 \begin{itemize}
@@ -15,11 +15,11 @@ data, e.g. gender, social class, etc.
 	
 	
 	%===========================================================================================%
-	\begin{frame}
+	
 		
 		\subsection{Factors: Example}
 		Consider a survey that has data on 200 females and 300 males. If
-		the rst 200 values are from females and the next 300 values are
+		the first 200 values are from females and the next 300 values are
 		from males, one way of representing this is to create a vector
 		\begin{framed}
 			\begin{verbatim}
@@ -27,9 +27,8 @@ data, e.g. gender, social class, etc.
 			> #To change this into a factor
 			> gender <- factor(gender)
 			>
-			\end{verbatim}
-		\end{framed}
-		The factor gender is stored internally as
+			
+		</code></pre>		The factor gender is stored internally as
 		\begin{enumerate}
 	\item female
 	\item male
@@ -42,9 +41,8 @@ data, e.g. gender, social class, etc.
 			\begin{verbatim}
 			> levels(gender)
 			[1] "female" "male"
-			\end{verbatim}
-		\end{framed}
-		%-------------------------------------------------------%
+			
+		</code></pre>		%-------------------------------------------------------%
 		\subsection{Factors: Example}
 		Five people are asked to rate the performance of a product on a
 		scale of 1-5, with 1 representing very poor performance and 5
@@ -56,9 +54,8 @@ data, e.g. gender, social class, etc.
 			> fsatisfaction <- factor(satisfaction, levels=1:5)
 			> levels(fsatisfaction) <- c("very poor", "poor", "average",
 			"good", "very good")
-			\end{verbatim}
-		\end{framed}
-		%-------------------------------------------------------%
+			
+		</code></pre>		%-------------------------------------------------------%
 		\begin{itemize}
 			\item The first line creates a numeric vector containing the satisfaction
 			levels of the 5 people. Want to treat this as a categorical variable
@@ -68,7 +65,7 @@ data, e.g. gender, social class, etc.
 			sets the names of the levels to the specified character strings.
 		\end{itemize}
 		%===========================================================================================%
-	\section{Vector Arithmetics}
+	<h3>Vector Arithmetics}
 
 Recall that the vector is a sequence of data elements of the same basic type. (Members in a vector are officially called components.)
 
@@ -194,7 +191,7 @@ Furthermore, we can reverse the order with a character string index vector.
 \documentclass[KSmain.tex]{subfiles} 
 \begin{document} 
 
-\section{Data Structures}
+<h3>Data Structures}
 
 pandas introduces two new data structures to Python - Series and DataFrame, both of which are built on top of NumPy (this means it's fast).
 
@@ -204,9 +201,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 pd.set_option('max_columns', 50)
-\end{verbatim}
-\end{framed}
-%-----------------------------------------%
+
+</code></pre>%-----------------------------------------%
 \subsection{Series}
 
 Series is a one-dimensional labeled array capable of holding any data type (integers, strings, floating point numbers, Python objects, etc.). The axis labels are collectively referred to as the index. The basic method to create a Series is to call:
@@ -214,7 +210,7 @@ Series is a one-dimensional labeled array capable of holding any data type (inte
 \begin{framed}
 \begin{verbatim}
 s = Series(data, index=index)
-\end{verbatim}
+
 \end{framed} 
 Here, data can be many different things:
  
@@ -232,16 +228,15 @@ A Series is a one-dimensional object similar to an array, list, or column in a t
 # create a Series with an arbitrary list
 s = pd.Series([7, 'Heisenberg', 3.14, -1789710578, 'Happy Eating!'])
 s
-\end{verbatim}
-\end{framed}
-\begin{verbatim}
+
+</code></pre>\begin{verbatim}
 0                7
 1       Heisenberg
 2             3.14
 3      -1789710578
 4    Happy Eating!
 dtype: object
-\end{verbatim}
+
 
 Alternatively, you can specify an index to use when creating the Series.
 
@@ -250,16 +245,15 @@ Alternatively, you can specify an index to use when creating the Series.
 s = pd.Series([7, 'Heisenberg', 3.14, -1789710578, 'Happy Eating!'],
               index=['A', 'Z', 'C', 'Y', 'E'])
 s
-\end{verbatim}
-\end{framed}
-\begin{verbatim}
+
+</code></pre>\begin{verbatim}
 A                7
 Z       Heisenberg
 C             3.14
 Y      -1789710578
 E    Happy Eating!
 dtype: object
-\end{verbatim}
+
 
 The Series constructor can convert a dictonary as well, using the keys of the dictionary as its index.
 
@@ -277,18 +271,16 @@ New York         1300
 Portland          900
 San Francisco    1100
 dtype: float64
-\end{verbatim}
-\end{framed}
-You can use the index to select specific items from the Series ...
+
+</code></pre>You can use the index to select specific items from the Series ...
 
 \begin{framed}
 \begin{verbatim}
 cities['Chicago']
 Out[5]:
 1000.0
-\end{verbatim}
-\end{framed}
 
+</code></pre>
 \begin{framed}
 \begin{verbatim}
 cities[['Chicago', 'Portland', 'San Francisco']]
@@ -297,9 +289,8 @@ Chicago          1000
 Portland          900
 San Francisco    1100
 dtype: float64
-\end{verbatim}
-\end{framed}
-Or you can use boolean indexing for selection.
+
+</code></pre>Or you can use boolean indexing for selection.
 
 \begin{framed}
 \begin{verbatim}
@@ -308,9 +299,8 @@ Out[7]:
 Austin      450
 Portland    900
 dtype: float64
-\end{verbatim}
-\end{framed}
-That last one might be a little strange, so let's make it more clear - \texttt{cities < 1000} returns a Series of \texttt{True/False} values, which we then pass to our Series cities, returning the corresponding \texttt{True} items.
+
+</code></pre>That last one might be a little strange, so let's make it more clear - \texttt{cities < 1000} returns a Series of \texttt{True/False} values, which we then pass to our Series cities, returning the corresponding \texttt{True} items.
 
 \begin{framed}
 \begin{verbatim}
@@ -331,9 +321,8 @@ Austin      450
 Portland    900
 dtype: float64
 
-\end{verbatim}
-\end{framed}
-You can also change the values in a Series on the fly.
+
+</code></pre>You can also change the values in a Series on the fly.
 
 \begin{framed}
 \begin{verbatim}
@@ -343,9 +332,8 @@ cities['Chicago'] = 1400
 print 'New value:', cities['Chicago']
 Old value: 1000.0
 New value: 1400.0
-\end{verbatim}
-\end{framed}
 
+</code></pre>
 \begin{framed}
 \begin{verbatim}
 # changing values using boolean logic
@@ -362,9 +350,8 @@ dtype: float64
 Austin      750
 Portland    750
 dtype: float64
-\end{verbatim}
-\end{framed}
-What if you aren't sure whether an item is in the Series? You can check using idiomatic Python.
+
+</code></pre>What if you aren't sure whether an item is in the Series? You can check using idiomatic Python.
 
 \begin{framed}
 \begin{verbatim}
@@ -372,9 +359,8 @@ print 'Seattle' in cities
 print 'San Francisco' in cities
 False
 True
-\end{verbatim}
-\end{framed}
-Mathematical operations can be done using scalars and functions.
+
+</code></pre>Mathematical operations can be done using scalars and functions.
 
 \begin{framed}
 \begin{verbatim}
@@ -401,9 +387,8 @@ New York         1690000
 Portland          562500
 San Francisco    1210000
 dtype: float64
-\end{verbatim}
-\end{framed}
-You can add two Series together, which returns a union of the two Series with the addition occurring on the shared index values. Values on either Series that did not have a shared index will produce a NULL/NaN (not a number).
+
+</code></pre>You can add two Series together, which returns a union of the two Series with the addition occurring on the shared index values. Values on either Series that did not have a shared index will produce a NULL/NaN (not a number).
 
 \begin{framed}
 \begin{verbatim}
@@ -412,9 +397,8 @@ print'\n'
 print cities[['Austin', 'New York']]
 print'\n'
 print cities[['Chicago', 'New York', 'Portland']] + cities[['Austin', 'New York']]
-\end{verbatim}
-\end{framed}
-\begin{verbatim}
+
+</code></pre>\begin{verbatim}
 Chicago     1400
 New York    1300
 Portland     750
@@ -431,7 +415,7 @@ Chicago      NaN
 New York    2600
 Portland     NaN
 dtype: float64
-\end{verbatim}
+
 
 Notice that because Austin, Chicago, and Portland were not found in both Series, they were returned with NULL/NaN values.
 
@@ -465,9 +449,8 @@ dtype: bool
 
 Boston   NaN
 dtype: float64
-\end{verbatim}
-\end{framed}
 
+</code></pre>
 \end{document}
 
 %%---------------------------------------%

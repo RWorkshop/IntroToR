@@ -28,11 +28,7 @@ GUIs and  IDEs
 History of R
 
 
-Objects
 
-As with many advanced programming languages, R distinguishes between several types of object.
-Those types includes scalar, vector, matrix, time, series data frames functions and graphics.
-The R function str applied to any R onject, including R functions
 Probability distributions
 The discrete uniform distribution
 parameters: min , max.
@@ -189,56 +185,7 @@ lines(x, sin(1/x), col="pink")
 # code is committed
  
 \end{verbatim}
-%=============================================%
-\begin{verbatim}
-x=c(15, 34, 7, 12, 18, 9, 1, 42, 56, 28, 13, 24, 35)
- 
-sort(x)           # sort x into ascending order
 
-length(x)         # How many items in x
-median(x)         # median of data set x
-sort(x)[7]        # 7th item when x is in ascending order
-quantile(x,0.75)  # Compute the third quartile
-quantile(x,0.25)  # Compute the first quartile
-IQR(x)            
-fivenum(x)
-
-# code is committed
-
-\end{verbatim}
-\newpage
-
-%=============================================%
-\subsection{The R Programming Language}
-R is a flexible language that is object oriented and thus allows the manipulation of a complex
-data structures in a condensed and efficient manner.
- 
-R's graphical abilities are also remarkable with possible interfacing with text processors such as
-Latex with the package sweave.
-R offers the addtional advantage of being a free and opensource system under the GNU general
-public licence.
-
-R is primarily a statistical language.
-R can be installed free of charge from www.r-project.org
-
-An online guide "An Introduction to R" can be access by typing
-help.start() at the command prompt to access this.
-
-\subsubsection{Defining variables}
-R is case sensitive.
-A convention is to use define a variable name with a capital letter.
-This reduces the chance of overwriting inbuild R functions, which are usually written in lowercase letters.
-
-
-Functions in R can be treated as "objects" that can be manipulated or used recursively.
-
-R shares many aspects with both Object orietnated and Functional programming langguages.
-all data in R is stored an objects, which have a range of "\texttt{methods}" available.
-The "class" of an object can be found using the class() function.
-Using the Help functions
-Embedded help commands "help()" and "help.search()" are good starting points to gather information. 
-Note that "help.search()" opens a web browser linked to the local manual pages.
- 
  
 %--------------------------------------------------------------------------------------------------------------------------------------%
 Probability distributions
@@ -334,59 +281,6 @@ shapiro.test(Avgs)		#Shapiro Wilk test. Normality is assumed if p-value > 0.05.
 \end{verbatim}
 			
  \newpage
-\section*{Introduction to R}
-
-
-R is a statistical Environment for statistical computing and graphics, which is available for windows, Unix and Mac OS platforms.
-
-R is maintained and distributed by an international team of statisticians and computers scientists.
-
-R is one of the major tools used in statistical research and in applications of statistics research.
-
-R is the product of an active movement among statisticians for a powerful, programmable, portable, and open computing environment, applicable to the most complex and sophsticated problems, as well as “routine” analysis.
-
-R is open source. There is very little restriction on access or use for practitioners.
-
-Practitioners have implemented hundreds of specialized statistical procedures for a wide variety of applications as contributed packages, which are also freely-available and which integrate directly into R. ( We will look at those shortly).
-
- 
-\subsection*{Advantages of R}
-
-1. It is completely free and will always be so, since it is issued under the GNU Public License;
-2. It is freely-available over the internet;
-3. It runs on almost all operating systems, including Unix and derivatives including Darwin, Mac OS X, Linux, FreeBSD, and Solaris; and most flavours of Microsoft Windows;
-4. It is the product of international collaboration between top computational statisticians and computer language designers;
-5. It allows statistical analysis and visualisation of unlimited sophistication; you are not restricted to a small set of procedures or options, and because of the contributed packages, you are not limited to one method of accomplishing a given computation or graphical presentation;
- 
-
-Starting R
-
-
-R can be started in the usual way by double-clicking on the R icon on the desktop.
-
-R works best if you have a dedicated folder for each separate project - called the working folder.
-
-Create the directory/folder that will be used as the working folder, e.g. create a folder on your desktop titled Your_name by right-clicking, then clicking New > Folder.
-
-Right-click on an existing R icon and click Copy. 
-
-In the working folder, right-click and click Paste. 
-
-The R icon will appear in the folder.
-
-
-
-\subsection*{The R environment}
-
- 
- 
-If a command is not complete at the end of a line, R will give a different prompt, by default:
-"+" on second and subsequent lines and continue to read input until the command is syntactically complete.
- 
-In particular functions in R are treated as objects that can be manipulated or used recursively, example TSA book3
-In common with functional languages, assignments in R can be avoided, but they are useful for clarity and convenience. 
-In addition R runs faster when loops are avoided, which can often be achieved using matrix calculation instead however, thus results in obscure looking code.
- 
 
 
 
@@ -682,86 +576,6 @@ same graphics window. You can keep your first plot by opening another graphsheet
 The default is a square graphsheet. You can create portrait graphsheets, landscape graphsheets, any shape you want. Check win.graph in the help files to see how. 
 We're going to look at 3 different ways to analyze these data: simple linear regression, non-linear regression, and polynomial regression. 
 
-%======================================================================================================== %
-\section*{5. Simple Linear Regression}
-
-
-You're probably thinking that it would be a mistake to use simple linear regression considering the plot we just produced. Well, there are ways of transforming data so that we can use linear regression methods. We'll fit a Michaelis-Menten function to these data. Using our data, the form of this function is as follows: 
-
-Vm and K are the parameters we are interested in estimating from these data. With a little bit of algebraic gymnastics, we can get the above equation to look like this: 
-
-It may not look like this helped, but it did. If you look closely, you'll see that this has the form of a simple linear regression model. Making these substitutions, conc/vel=ytrans, K/Vm=a, and 1/Vm=b, the equation becomes: 
-
-Here's our game plan. We'll first create the new transformed variable ytrans, then fit the linear regression to estimate the parameter a and b. Then we can calculate Vm and K from there. 
-We can easily add another variable to our data frame: 
-> df$ytrans <- df$conc/df$vel
-Take a look at df and see that there is a new column added. Plot the new variable against conc to check whether a linear regression model is appropriate. 
-> plot(df$conc, df$ytrans)
-Now we are ready to fit our regression model. We'll use the function lm(), which stands for linear model. 
-> lmfit <- lm(ytrans~conc, data=df)
-By default, you will get an error if there are any missing values in your data when you run this function. If this happens, you may want to omit those cases that contain missing values and fit the model on the remaining cases. To do so, run the same function with an argument to specify the desired action. 
-> lmfit <- lm(ytrans~conc, data=df, na.action=na.omit)
-
-%======================================================================================= %
-
-This might make more sense if you know that R designates missing values by NA. Now let's look at this function call. The desired model is specified with ytrans~conc. Think of the tilde as an equal sign when specifying a model. ytrans is our response, so it goes on the left side. conc is our explanatory variable, so it goes on the right. An intercept term is assumed so you do not need to include it in the model definition. However, it is possible to force a zero intercept if you wanted. 
-Notice that there was not any output automatically generated when you fit the regression. The results have been saved in an object we called lmfit. This object is actually a list that contains several objects, which you can see with the function names() 
-\begin{framed}
-	\begin{verbatim}
-	> names(lmfit)
- [1] "coefficients"  "residuals"     "effects"       "rank"      
- [5] "fitted.values" "assign"        "qr"            "df.residual"  
- [9] "xlevels"       "call"          "terms"         "model"  
-\end{verbatim}
-\end{framed}
-Any of these terms can be viewed or used with the same method you used to view a variable in a data frame: object name, followed by a dollar sign, then the element name. For example, lmfit$call. If you want to view most of the standard regression output, use the summary() function: 
-\begin{framed}
-\begin{verbatim}
-> summary(lmfit)
-
-Call:
-lm(formula = ytrans ~ conc, data = df)
-
-Residuals:
-         1          2          3          4          5          6          7 
- 8.333e-04 -1.727e-03 -1.864e-04  5.013e-04  1.363e-04  9.112e-05  3.515e-04 
-
-Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 0.004303   0.000451   9.541 0.000214 ***
-conc        0.259603   0.003102  83.703 4.61e-09 ***
----
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
-
-Residual standard error: 0.0009071 on 5 degrees of freedom
-Multiple R-Squared: 0.9993,     Adjusted R-squared: 0.9991 
-F-statistic:  7006 on 1 and 5 DF,  p-value: 4.612e-09 
-\end{verbatim}
-\end{framed}
-You can also easily view diagnostic plots (residuals, observed vs fitted, Cook's distance, etc.): 
-> plot(lmfit)
-R knows that this is the output from a linear model and will generate the appropriate plots. How does it know? Check to see what class it is: 
-> class(lmfit)
-[1] "lm"
-You can get the coefficients from your model fit with the coef() function: 
-> coef(lmfit)
-(Intercept)        conc 
-0.004303145 0.259602617
-These are estimates for the parameters we called a and b, respectively. The output from coef() is just a vector of length 2. Let's use the coefficients to add a line to our graph of ytrans vs conc: 
-> plot(df$conc, df$ytrans)
-> abline(coef(lmfit))
-Here's what it looks like:
-
-The last thing we have to do is back-calculate to get our non-linear parameters, Vm and K: 
-> Vm <- 1/coef(lmfit)[2]
-> K <- Vm*coef(lmfit)[1]
-> Vm
-    conc 
-3.852041 
-> K
-      conc 
-0.01657589 
-Remember that the output from the coef function is a vector of length 2 so we can access the desired coefficient using the brackets as shown. We now have our parameter estimates! 
 
 %======================================================================================================== %
 6. Non-linear Regression

@@ -184,46 +184,7 @@ Y1 =
 Anscombe’s Quartet 
 The uniform distribution
 
-\subsection{Simulating a dice experiment}
-Dice = runif(50,min=0,max=6)	
-Dice				#print the outcomes to screen
-floor(Dice)			#using the floor function
-ceiling(Dice)			# using the ceiling function
-Dice=ceiling(Dice)		#discretize the outcomes.
-mean(Dice)			# compute the mean of the outcomes (expected value).
-sd(Dice)			#compute the standard deviation of the outcomes.
-# More compact alternative, using the floor function. Note the changed parameters.
-Dice2=floor(runif(50,min=1,max=7))	
 
-Questions
-The expected value of a dice throw is 3.5. Is the sample mean close to this value?
-
-The "apply" family of functions
- The Apply family of functions are 
-
-
- 
-Iteration Loops
-\subsection*{Central Limit Theorem}
-Recall the Dice experiment in week 8.
-
-N=100				#number of loops
-Avgs=numeric(N)		#array “Avgs” store the sample means
-for( i in 1:N)
-	{	Dice=floor(runif(50,min=1,max=7));	Avgs[i]=mean(Dice);
-	}
-Avgs				#print Avgs dataset to screen
-
-The Central limit theorem states that.
-\begin{verbatim}
-The “Dice” distribution is a discrete uniform distribution. However 
-mean(Avgs)			#compute the mean. Is it roughly what we are expecting?
-qqnorm(Avgs)			#draws a QQ plot that is used to check for normality.
-qqline(Avgs)			#adds trend line to QQplot.
-shapiro.test(Avgs)		#Shapiro Wilk test. Normality is assumed if p-value > 0.05.
-\end{verbatim}
-			
- \newpage
 
 
 

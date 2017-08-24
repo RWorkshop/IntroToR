@@ -1,10 +1,6 @@
-Data Table
+Introduction to R
 =================
 
-"Probability : Presumptions, Paradoxes and Pitfalls" 
-
-Programming Language :Rso
-
-statistical disclosure on trolley
-survey
-official statistics And survey Methodology
+* The R environment
+* Working with R
+* Objects

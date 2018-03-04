@@ -159,4 +159,28 @@ A <- data.frame(
 \end{framed}
 %====================================================================================%
 
+\subsection*{Using the \texttt{scan()} command to input character data}
+Previously we have seen the \texttt{scan()} command used to quickly input numeric data. The command can also be used to input character data. The addition argument , \texttt{what=" "}, must be used.  
+Create a variable “grouping” that comprises, in order,  five “A”s and then six “B”s.
+
+\begin{verbatim}
+# inputting character data
+
+grouping = scan(what=" ")
+
+# Enter values
+# Hit return again when you have finished.
+
+\end{verbatim}
+
+
+\subsection*{Spreadsheet Interface}
+\texttt{R} provides a spreadsheet interface for editing the values of existing data sets.
+We use the command \texttt{data.entry()} , and name of the data object as the argument.
+
+\begin{verbatim}
+> data.entry(X) # Edit the data set and exit interface
+> X
+\end{verbatim}
+
 \end{document}

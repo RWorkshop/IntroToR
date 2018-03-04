@@ -1,10 +1,37 @@
+	\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode"CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 201113:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{Introduction to R} \rhead{Kevin O'Brien} \chead{Decision tree} %\input{tcilatex}
+
+\begin{document}
+\section*{Exercise:  The Air Quality Data Set}
+
 \subsection*{Whiteside}
  
  
  
  The Whiteside data is stored in the MASS package.
  
- \begin{frameD}
+ \begin{framed}
  \begin{verbatim}
  > library(MASS)
  \end{verbatim}
@@ -22,10 +49,7 @@
  4.
  Plot gas consumption versus temperature. Use plot symbol 15, and title the plot "Whiteside’s Gas consumption” .
  
- Exercise 12
-
-
-
+\newpage
 The resident data set ‘mtcars’ contains information about cars from a 1974 Motor Trend issue. Load the data set and answer the following questions.
 
 >data(mtcars)
@@ -43,9 +67,7 @@ The resident data set ‘mtcars’ contains information about cars from a 1974 M
 5. What horsepower (hp) does the "Valiant" have?
 
 %==================================================================================%
-
-Exercise 15
-
+\newpage
  
 
 In the library MASS is a dataset UScereal which contains information about popular breakfast cereals.
@@ -81,3 +103,5 @@ Now, investigate the following relationships, and make comments on what you see.
 6. The relationship between sodium and sugars
 
  
+
+\end{document}

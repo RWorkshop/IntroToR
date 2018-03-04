@@ -1,3 +1,120 @@
+Grouping, loops and conditional execution
+R is an expression language in the sense that its only command type is a function or expression which returns a result. Even an assignment is an expression whose result is the value assigned, and it may be used wherever any expression may be used; in particular multiple assignments are possible.
+
+Commands may be grouped together in braces, $\{expr_1; ...; expr_m\}$, in which case the value of the group is the result of the last expression in the group evaluated. Since such a group is also an expression it may, for example, be itself included in parentheses and used a part of an even larger expression, and so on.  
+
+
+\subsection*{if Statement}
+
+Have already encountered implicit looping when using the apply
+family of functions.
+
+Conditional execution: the if statement has the form 
+\begin{verbatim}
+if (condition){ # Brackets can be omitted if only one command
+expr_1 # to be carried out.
+}
+else {
+expr_2
+}    
+\end{verbatim}
+
+
+The condition must evaluate to a logical value, i.e. TRUE or
+FALSE. If the condition == TRUE, expr\_1 is carried out, which
+can consist of a single command or multiple commands. If the
+condition == FALSE, expr\_2 is carried out.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+Can also have longer if statements:
+\begin{verbatim}
+if (condition1){
+expr_1
+}
+else if (condition2){
+expr_2
+}
+...
+else {
+expr_n
+}   
+\end{verbatim}
+
+If condition1 == TRUE, expr\_1 is executed and the checking
+stops. If condition1 == FALSE, moves on to condition2 and
+checks if that condition is met. If condition2 == TRUE, expr\_2
+is executed and checking stops. If condition2 == FALSE, moves
+on to the next condition and so on until all conditions have been
+checked.
+The final else is executed if none of the previous conditions have
+returned a value of TRUE.
+
+
+Usually the logical operators &&, ||, ==, !=, >, <, >=, <= are used
+as the conditions in the if statement.
+The following function gives a demonstration of the use of
+if... else.
+\begin{verbatim}
+comparisons1 <- function(number)
+{
+# if ... else
+if (number != 1)
+{
+cat(number,"is not one\n")
+}
+else
+{
+cat(number,"is one\n")
+}
+}
+> comparisons1(1) > comparisons1(20)
+1 is one 20 is not one
+\end{verbatim}
+
+
+The following demonstrates the use of
+if ... else if ... else
+\begin{verbatim}
+ comparisons2 <- function(number)
+{
+if (number == 0)
+{
+cat(number,"equals 0\n")
+}
+else if (number > 0)
+{
+cat(number,"is positive\n")
+}
+else
+{
+cat(number,"is negative\n")
+}
+}
+> comparisons2(0) > comparisons2(-15) > comparisons2(1)
+0 equals 0 -15 is negative 1 is positive   
+\end{verbatim}
+
+
+
+This function demonstrates the use of && in the condition. This
+means that both conditions must be met before a value of TRUE is
+returned.
+\begin{verbatim}
+comparisons3 <- function(number)
+{
+if ( (number > 0) && (number < 10) )
+{
+cat(number,"is between 0 and 10\n")
+}
+}
+> comparisons3(-1) > comparisons3(9) > comparisons3(10)
+9 is between 0 and 10    
+\end{verbatim}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \subsection*{ifelse Statement}
 A vectorised version of the if statement is ifelse. This is useful

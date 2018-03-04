@@ -1,20 +1,48 @@
+
+	\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{framed}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode"CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 201113:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{Apache Spark} \rhead{Kevin O'Brien} \chead{Decision tree} %\input{tcilatex}
+
+\begin{document}
 %=========================================================================================%
 
 \section{Inspecting a Data Set}
 \begin{itemize}
-	\item dim()
-	\item nrow() and ncol()
-	\item names()
+	\item \texttt{dim()}
+	\item \texttt{nrow()} and \texttt{ncol()}
+	\item \texttt{names()}
 	\item summary()
-	\item tail()
-	\item head()
-	\item describe() (from the psych package)
+	\item \texttt{tail()}
+	\item \texttt{head()}
+	\item \texttt{describe()} (from the psych package)
 \end{itemize}
 %=========================================================================================%
 \subsection*{3.1 Dimensions of a data set}
 We have remarked that some data sets are very large. This is perhaps a good place to consider
-summary information about data objects. For a simple vector, a useful command to determine
-the length (remark: sample size) is the function \length{length()}.
+summary information about data objects. 
+
+For a simple vector, a useful command to determine
+the length (remark: sample size) is the function \texttt{length()}.
 %================================%
 \begin{framed}
 \begin{verbatim}
@@ -39,7 +67,7 @@ tools for assessing the size of data.
 \end{verbatim}
 \end{framed}
 
-We can also determine the row names and column names using the functions \texttt{rownames()}
+We can also determine the row names and column names using the functions \texttt{row\texttt{names()}}
 and \texttt{colnames()}. If there are no specific row or column names, the command will just return
 the indices.
 \begin{framed}

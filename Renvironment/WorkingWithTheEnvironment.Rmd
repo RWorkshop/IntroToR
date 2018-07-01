@@ -1,3 +1,5 @@
+
+```{r}
 # Computing in the R Environment
 
 demo(graphics)
@@ -15,5 +17,5 @@ sessionInfo()
 #list of currently available data sets
 data()
 
+```
 
-############################################################

@@ -30,34 +30,5 @@ Click on
 Windows > base > R-version-win32.exe > Run
 and follow the instructions to install the programme.
 
-### Vectors and assignment
 
-R operates on named data structures. The simplest such structure is the numeric vector, which is a single entity consisting of an ordered collection of numbers. To set up a vector
-named x, say, consisting of five numbers, namely 10.4, 5.6, 3.1, 6.4 and 21.7, use the R command
-> x <- c(10.4, 5.6, 3.1, 6.4, 21.7)
-
-This is an assignment statement using the function c()
-
-### Using the Help command
-
-R has a built-in help facility. To get more information on any specific function, e.g. sqrt(), the command is
-> help(sqrt)
-
-An alternative is
-> ?sqrt
-
-We can also obtain help on features specified by special characters. In this case q
-> help("[[")
-
-Help is also available in HTML format by running
-> help.start()
-
-For more information use
-> ?help
-
-### Useful links:
-
-http://cran.r-project.org/doc/manuals/R-intro.pdf
- 
- 
 

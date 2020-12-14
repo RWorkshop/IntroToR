@@ -1,20 +1,8 @@
 
-
-
-Module MS4024 Numerical Computation - R Component
-Introduction to Statistical Computing
-Introduction to R
-What is R?
-Using R
-Packages
-Defining Variables
-Using the Help functions
-
-\end{frame}
 %=====================================================================================================================%
 \begin{frame}
 
-Introduction to R
+\frametitle{Introduction to R}
 
 R is the product of an active movement among statisticians for a powerful, programmable, portable, and open computing environment, applicable to the most complex and sophsticated problems, as well as“routine”analysis.
  
@@ -58,124 +46,7 @@ R is currently maintained by the R core-development team, a hard-working, intern
 The R project web page ( http://www.r-project.org ) is the main site for information on R. At this site are directions for obtaining the software, accompanying packages and other sources of documentation.
 
 \end{frame}
-%=====================================================================================================================%
-\begin{frame}
-\frametitle{Using R}
-R is most easily used in an interactive manner, typing code into the command line and R gives you an response. Questions are asked and answered on the command line. To start up R's command line you can do the following: in Windows find the R icon and double click. Other operating systems may have different ways.
 
-R can be started in the usual way by double-clicking on the R icon on the desktop.
-
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-The > is called the prompt, used to indicate where you are to type. If a command is too long to fit on a line, a + is used for the continuation prompt.
-If a command is not complete at the end of a line, R will give the "+" prompt on second and subsequent lines and continue to read input until the command is syntactically complete.
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-Commands are separated either by a semi-colon (;), or by a newline. Elementary commands can be grouped together into one compound expression by braces ({ and }). 
-
-Comments can be put almost anywhere, starting with a hashmark (#); everything after "#" is a comment.
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-The R console opens with information and then a prompt mark  >  it is ready to accept commands.
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-The Assignment operator
-
-The assignment operator is a "=". This is valid as of R version 1.4.0. Previously it was (and still can be) a "<-".
-Both will be used, although, you should learn one and stick with it.
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-Defining Variables 
-R is case sensitive.
-A convention is to use define a variable name with a capital letter. This reduces the chance of overwriting inbuild R functions, which are usually written in lowercase letters.
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-Commonly used variable names such as x,y and z (in lower case letters) are not "reserved".
-
-x = 2           # create variable x and assign the value 2
-y <- 4          # create variable y and assign the value 4
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}5 -> z          # create variable z and assign the value 5
-
-x  #print x t\end{frame}o screen
-y  #print y to screen
-z  #print z to screen
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-The value of each variable is prefaced with a " [1] ". This indicates that the value is a vector. More on that later.
-<<<<<<< HEAD:NewMaster.tex
-
-=======
-%=====================================================================================================================%
-
-
-
-
-Basic Calculations
-
-We will brief\begin{frame}ly look at how R accomplished basic calculations.
-
-
-x*y			# multiplication
-x/z			# division
-
-x^2			# powers
-sqrt(x)		# square root
-
-exp(z)		 # exponentials   
-log(y)\end{frame}		 # logarithms
-
-pi             # returns the value of pi to six decimal places
-
- 
-Complex numbers , Trigonometric  Functions and Binomial Coefficients
- 
-%=====================================================================================================================% 
-Binomial coefficients are computed using the choose() command.
-
-
- 
-
-J = -1 ;  sqrt(J)  ;  str(J) ;      # variable is defined as numeric, not complex.
-K = -1 +0i ;\begin{frame}  sqrt(K)  ;  str(K) ;  # variable is defined as complex .
-
-
-sin(3.5*pi)             # correct answer is -1
-cos(3.5*pi)             # correct answer is zero
- 
-choose(6,2)             # From 6 how many ways of choosing items.
- 
->>>>>>> origin/master:CodingGrace/00-CodingGraceSep2015.tex
-Data Vectors
-
-x=c(1,3,4,5,6,7)
-y=c("R","G","B")
-
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-
-
-<<<<<<< HEAD:NewMaster.tex
-=======
-
-
-Packages
-"R"contains one or more libraries of packages. Packages contain various functions and data sets for numerous purposes, e.g.survival package, genetics package, fda package, etc. Some packages are part of the basic installation. 
-R consists of a base package and many additional packages.
-
-Others can be downloaded from the Comprehensive R Archive Network (CRAN).
-
-To access all of the functions and data sets in a particular package, it must be loaded into the workspace. 
-\end{frame}
 %=====================================================================================================================%
 \begin{frame}
 
@@ -189,120 +60,11 @@ One important thing to note is that if you terminate your session and start a ne
 
 install.packages("evir")
  
->>>>>>> origin/master:CodingGrace/00-CodingGraceSep2015.tex
 To get out of R, just type: q(). 
 
 \end{frame}
-%=====================================================================================================================%
+
 \begin{frame}
-
-Using R's help commands
-
-R has an inbuilt help facility. To get more information on any specific named function, for example “boxplot”, the command is: ?boxplot
-
-
-?boxplot		# access help on boxplots
-help(Im)        # access help on "Im"
-
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-
-On most R installations help is available in HTML format by running help.start() which will launch a Web browser that allows the help pages to be browsed with hyperlinks. 
- 
-
-
-
-help.start()
-
- 
- 
-
-R was originally designed as a command language.  
-Commands were typed into a text-based input area on the computer screen and the program responded with a response to each command.
-
-R is an open source software package, meaning that the code written to implement the various functions can be freely examined and modified.
-R can be installed free of charge from the R-project website.
-
-An online manual in “An introduction to R” is available via the R help system. Type “help.start ()” at the command prompt to access it, R   has many features in common with functional and object oriented programming languages.
-
-
-
-In particular functions in R are treated as objects that can be manipulated or used recursively, example TSA book3
-
-In common with functional languages, assignments in R can be avoided, but they are useful for clarity and convenience. In addition R runs faster when loops are avoided, which can often be achieved using matrix calculation instead however, thus results in obscure looking code.
-
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-
-Functions in R can be treated as "objects" that can be manipulated or used recursively.
-
-R shares many aspects with both Object orietated and functional programming languages. all data in R is stored an objects, which have a range of "methods" available. The "class" of an object can be found using the class() function.
-Using the Help functions
-
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-Embedded help commands "help()" and "help.search()" are good starting points to gather information.
-Note that "help.search()" opens a web browser linked to the local manual pages.
- 
-
-R works best if you have a dedicated folder for each separateproject - called the working folder.Create the directory/folder that will be used as the working folder, e.g. create a folder on your desktop titled Your_name by right-clicking, then clicking New > Folder. 
- 
-Right-click on an existing R icon and click Copy.   In the working folder, right-click and click Paste. The R icon will appear in the folder. As with many advanced programming languages, R distinguishes between several types of object. Those types includes scalar, vector, matrix, time, series data frames functions and graphics. The R function str applied to any R onject, including R functions.To start R in Windows, double click the R icon. To start R in Unix or Linux, type ‘R’ at the command prompt. 
-
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-
-Section 1: Basic R commands and Functions
-Installing R on your computer
-Editing your Data
-Getting help in R
-Manipulating Characters
-Objects
-Packages
-Logical and Relational Operators
-Generating Random Numbers
-Section 2: Basic Mathematical operations
-Trigonometric and power functions
-Integration
-Complex numbers
-Matrices and Linear Algebra
-Factorials and permutations
-Section 3 : Data Structures
-Vectors, Arrays and Matrices
-Lists
-Frames
-Indexing
-Subsetting
-Section 4 : Regression models
-Simple Linear Regression
-Multiple Linear Regression
-Non Linear Regression
-Quadratic Regression
-Histogram: sample code
-Data Management
-Vector Functions
-Section 6: Simulation and Probability Distributions
-Probability Distributions
-Probability
-Truncation and discretization
-Creating New Functions
-Argument Matching
-Section 8: Hypothesis Tests
-The Correlation Test
-The Chi Square Test
-The Chi Square Test for Independence
-The PropTest
-The F Test
-The Kolmogorov Smirnov Test
-The Anderson Darling Test
-The t-test
-The ANOVA F-Test
-Section 9: Graphics
-Graphics Parameters
 
 Section 10: Simulation
 Simulation Study : Random Walks
@@ -330,29 +92,7 @@ x=edit(x)	          # the 'edit' function to call the script editor
 x  	                     # print to screen
 
 \end{frame}
-%=====================================================================================================================%
-\begin{frame}
 
-Getting help in R
-R has a built-in help facility. To get more information on any specific function, e.g. sqrt(), the command is
-> help(sqrt)
-An alternative is
-> ? sqrt
-We can also obtain help on features specified by special characters.
-The argument must be enclosed in single or double quotes (e.g. "[[")
-> 
-Help is also available in HTML format by running
-> help.start()
-
-
-\end{frame}
-%=====================================================================================================================%
-\begin{frame}
-help (sqrt)   	      # create a vector x
-?exp  	   		  # edit the values using spreadsheet interface.
-help("[[")	         # print to screen
-
-\end{frame}
 %=====================================================================================================================%
 \begin{frame}
 Manipulating Characters
@@ -374,24 +114,7 @@ rm(list=ls())								#removes all of the objects in the workspace.
 At the end of each R session, you are prompted to save your workspace. If you click Yes, all objects are written to the ".RData" file. 
 When R is re-started, it reloads the workspace from this file and the command history stored in ".Rhistory" is also reloaded.
 
-Logical and Relational Operators
-Logical operators
-
- ==
-Equality
- ! = 
- not equal to
- < 
-Less Than
- >=
- greater than or equal to
->
-Greater Than
- <=
- Less than or equal to
- 
-
-
+%==================================================================================================================%
 
 
 Section 3 : Data Structures

@@ -56,15 +56,5 @@ Using Help
 Demos
 Licence Issues
 
-### Working Directory
-Getting working directory
-Setting working directory
-
-### Managing Your Workspace
-Saving your workspace
-Listing objects in the workspace
-Removing objects from the workspace
-quitting the environment
-
 
 

@@ -1,0 +1,42 @@
+---
+title: "Time Series Analysis with R"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: united
+    css: style.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+source("TimeSeries_Source/setup_data.R")
+
+```
+
+
+
+
+
+
+```{r child="TimeSeries_Source/wsexercise_1_1.Rmd"}
+```
+
+```{r child="TimeSeries_Source/wsexercise_1_2.Rmd"}
+```
+
+```{r child="TimeSeries_Source/wsexercise_1_3.Rmd"}
+```
+
+```{r child="TimeSeries_Source/wsexercise_1_4.Rmd"}
+```
+
+```{r child="TimeSeries_Source/wsexercise_1_5.Rmd"}
+```
+
+```{r child="TimeSeries_Source/wsexercise_1_6.Rmd"}
+```
+
+   
+
+
+
